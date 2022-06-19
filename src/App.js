@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
+import Main from './components/Main'
 
 function App() {
 
@@ -9,11 +10,10 @@ function App() {
   const today = new Date()
   const todayDate = today.getFullYear()+'-'+(String(today.getMonth()+1).padStart(2,'0'))+'-'+today.getDate()
   const displayDate = today.toLocaleString('en-uk',{day:'numeric', month:'long', year:'numeric'})
-  let requestedDate = todayDate
 
 
   async function fetchData() { 
-    const response = await fetch(`https://api.nasa.gov/planetary/apod?api_key=${apiKey}&date=${requestedDate}`)
+    const response = await fetch(`https://api.nasa.gov/planetary/apod?api_key=${apiKey}&date=${todayDate}`)
     const responseJson = await response.json();
     console.log(responseJson)
     setData(responseJson);
@@ -30,6 +30,7 @@ function App() {
 
   return (
     <div className="App">
+      <Main data={data} date={todayDate} displayDate={displayDate} />
     </div>
   );
 }
