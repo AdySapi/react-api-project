@@ -1,14 +1,14 @@
 import React from 'react';
 
-function Main({ data, todayDate, displayDate, setChosenDate }) {
+function Main({ data, todayDate, displayDate, chosenDate, setChosenDate }) {
 
     const { url, title, explanation } = data
 
 
     const dateHandler = (e) => {
         e.preventDefault();
-        if (setChosenDate().length === 0) {
-            setChosenDate(e.target.value)
+        if (chosenDate.length === 0) {
+            setChosenDate("")
         } else {
             setChosenDate(e.target.value)
         }
@@ -29,8 +29,8 @@ function Main({ data, todayDate, displayDate, setChosenDate }) {
             </div>
             <h3>View images from previous days</h3>
             <form onChange={dateHandler}>
-                <label>Select date</label>
-                <input type="date" id="prevDate" min="2015-01-01" max={todayDate}></input>
+                <label>Select date </label>
+                <input value={chosenDate} onChange={setChosenDate} type="date" className="prevDate" min="2015-01-01" max={todayDate}></input>
             </form>
         </div>
     )
