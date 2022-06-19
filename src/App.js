@@ -4,7 +4,9 @@ import Main from './components/Main'
 
 function App() {
 
-  const [data, setData] = useState([])
+  const [data, setData] = useState([]);
+  const [chosenDate, setChosenDate] = useState("");
+
 
   const apiKey = "eA5sAhbADxoIlDM4gSKkgsfuhWvYOqTtPakQOG4T";
   const today = new Date()
@@ -15,8 +17,9 @@ function App() {
   async function fetchData() { 
     const response = await fetch(`https://api.nasa.gov/planetary/apod?api_key=${apiKey}&date=${todayDate}`)
     const responseJson = await response.json();
-    console.log(responseJson)
+    // console.log(responseJson)
     setData(responseJson);
+    const newApodJson = await fetch(`https://api.nasa.gov/planetary/apod?api_key=${apiKey}&date=${chosenDate}`)
   };
 
   useEffect(() => {
@@ -30,7 +33,7 @@ function App() {
 
   return (
     <div className="App">
-      <Main data={data} date={todayDate} displayDate={displayDate} />
+      <Main data={data} date={todayDate} displayDate={displayDate} chosenDate={setChosenDate} />
     </div>
   );
 }
