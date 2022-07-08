@@ -1,0 +1,87 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: none;
+    box-sizing: border-box;
+    background: transparent;
+    font-family: inherit;
+}
+
+a {
+    text-decoration: none;
+}
+
+a img {
+    border: none;
+}
+
+button,
+a {
+    cursor: pointer;
+    color: inherit;
+}
+
+textarea {
+    resize: none;
+}
+
+button,
+textarea,
+select {
+    appearance: none !important;
+    border-radius: 0;
+}
+
+/* ==================End of CSS Reset ===================== */
+
+
+body {
+    width: 100%;
+    height: auto;
+    min-height: 100vh;
+}
+
+.App {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 60px 40px;
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 50px;
+    font-family: 'Roboto Slab';
+    /* font-family: 'Assistant' */
+    font-size: 36px;
+}
+
+.picNinfo {
+    display: flex;
+}
+
+.guide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    text-align: center;
+    font-family: 'Edu TAS Beginner';
+    font-size: 24px;
+}
+
+.img {
+    object-fit: cover;
+    max-width: 100%;
+    height: 600px;
+}
+
+span {
+    display: flex;
+    justify-content: center;
+    padding: 60px 0;
+    font-family: 'Roboto Slab';
+    font-size: 24px;
+}

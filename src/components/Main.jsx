@@ -11,26 +11,28 @@ function Main({ data, todayDate, displayDate, chosenDate, setChosenDate }) {
             setChosenDate("")
         } else {
             setChosenDate(e.target.value)
+            console.log(chosenDate)
         }
     };
 
 
     return (
-        <div>
+        <div className="page">
             <h1>Astronomy Picture of the Day</h1>
-            <p> Discover the cosmos! Each day a different image or photograph of our fascinating universe is featured, along with a brief explanation written by a professional astronomer.
-            </p>
-            <div className="">
-                <time dateTime="yyyy-mm-dd">{displayDate}</time>
-                <img src={url} alt=""></img>
-                <h2 id="title">{title}</h2>
-                <p id="explanation">Explanation: {explanation}</p>`
-
+            <div className="picNinfo">
+                <p className="guide"> Discover the cosmos!
+                    Each day a different image or photograph of our fascinating universe is featured, along with a brief explanation written by a professional astronomer.
+                </p>
+                <img className="img" src={url} alt=""></img>
             </div>
+
+            <span>{displayDate}</span>
+            <h2 id="title">{title}</h2>
+            <p id="explanation">Explanation: {explanation}</p>`
             <h3>View images from previous days</h3>
             <form onChange={dateHandler}>
                 <label>Select date </label>
-                <input value={chosenDate} onChange={setChosenDate} type="date" className="prevDate" min="2015-01-01" max={todayDate}></input>
+                <input type="date" className="prevDate" min="2015-01-01" max={todayDate}></input>
             </form>
         </div>
     )

@@ -21,7 +21,7 @@ function App() {
     setData(responseJson);
   };
 
-  async function fetchChosenData() {
+  async function fetchChosenDate() {
     const response = await fetch(`https://api.nasa.gov/planetary/apod?api_key=${apiKey}&date=${chosenDate}`)
     const responseJson = await response.json();
     console.log(responseJson)
@@ -30,11 +30,8 @@ function App() {
 
   useEffect(() => {
      fetchData();
-     fetchChosenData()
+     fetchChosenDate()
   }, []);
-
-
-
 
 
 
