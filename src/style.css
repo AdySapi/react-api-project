@@ -40,10 +40,12 @@ body {
     width: 100%;
     height: auto;
     min-height: 100vh;
+    background-image: linear-gradient(to bottom, #02080d, #1b3341, #286079, #2e90b6, #29c5f6);
+    color: #ffffff;
 }
 
 .App {
-    max-width: 1280px;
+    max-width: 1300px;
     margin: 0 auto;
     padding: 60px 40px;
 }
